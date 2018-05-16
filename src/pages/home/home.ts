@@ -19,7 +19,7 @@ export class HomePage {
     this.weapon = "";
   }  
   
-  delete(item){
+  deleteWeapon(item){
     var index = this.weapons.indexOf(item, 0);
     if (index > -1) {
       this.weapons.splice(index, 1);
