@@ -1,14 +1,36 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Weapon collector ionic app
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label floating>Weapon</ion-label>
+      <ion-input type="text" [(ngModel)]="weapon"></ion-input>
+    </ion-item>     
+    
+  </ion-list>
+  
+  <button ion-button round (click)="addWeapon()"><ion-icon name="add"> ADD</ion-icon></button>
+  
+  
+  <ion-list>
+    <ion-item-sliding *ngFor="let weapon of weapons">
+      <ion-item>
+        {{ weapon }}
+      </ion-item>
+      
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delete(item)">
+          <ion-icon name="trash"></ion-icon>REMOVE
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  
 </ion-content>
